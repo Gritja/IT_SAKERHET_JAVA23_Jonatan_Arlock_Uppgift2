@@ -73,13 +73,16 @@ public class Main {
             System.out.println("Please log in.");
             return;
         }
+        System.out.println("Type a message: ");
         String message = scanner.nextLine().trim();
         JSONObject json = new JSONObject();
         json.put("message", message);
         performRequest(httpClient, BASE_URL + "capsule/create", "POST", json.toJSONString());
     }
     private static void loginOperation(HttpClient httpClient, Scanner scanner) {
+        System.out.println("Enter Email: ");
         String email = scanner.nextLine().trim();
+        System.out.println("Enter Password: ");
         String password = scanner.nextLine().trim();
 
         JSONObject json = new JSONObject();
@@ -88,7 +91,9 @@ public class Main {
         performRequest(httpClient, BASE_URL + "login", "POST", json.toJSONString());
     }
     private static void registerOperation(HttpClient httpClient, Scanner scanner) {
+        System.out.println("Enter Email: ");
         String email = scanner.nextLine().trim();
+        System.out.println("Enter Password: ");
         String password = scanner.nextLine().trim();
 
         JSONObject json = new JSONObject();
